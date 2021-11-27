@@ -7,7 +7,7 @@ output:
   html_document:
     toc: yes
 params:
-  province: Alberta
+  province: "Quebec"
 ---
 
 ```{r setup, include=FALSE}
@@ -76,7 +76,7 @@ knitr::kable(max_horses,
 
 Below we zoom in and look at the province of `r params$province`:
 
-```{r plot province, fig.width=5, fig.height=4, fig.cap = "Number of horses for province out of focus", out.width = "50%"}
+```{r plot province, fig.width=5, fig.height=4, fig.cap = "Figure 2: Number of horses for province out of focus", out.width = "50%"}
 province_plot <- horse_pop %>% 
   filter(GEO == params$province) %>% 
   ggplot(aes(x = Ref_Date, y = Value)) +
